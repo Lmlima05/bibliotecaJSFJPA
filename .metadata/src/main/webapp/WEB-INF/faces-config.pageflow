@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14691029546570" configfile="/bibliotecaJSFJPA/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pages/adicionarAluno.xhtml" x="122" y="178" id="pf14691087050641" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14691087050642 pf14691087050643" path="/pages/adicionarAluno.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/adicionarAluno.jsf" x="338" y="178" id="pf14691087050644" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14691087050642 pf14691087050643" path="/pages/adicionarAluno.jsf"/>
+  <links id="pf14691087050642" target="pf14691087050644" source="pf14691087050641" outcome="pages.aluno.limpar"/>
+  <links id="pf14691087050643" target="pf14691087050644" source="pf14691087050641" outcome="pages.aluno.criar"/>
+</pageflow:Pageflow>

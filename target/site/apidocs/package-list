@@ -1,0 +1,9 @@
+br.unip.alpoo.biblioteca.apoio
+br.unip.alpoo.biblioteca.controller.bean
+br.unip.alpoo.biblioteca.filter
+br.unip.alpoo.biblioteca.listeners
+br.unip.alpoo.biblioteca.model.entidade
+br.unip.alpoo.biblioteca.model.hibernate
+br.unip.alpoo.biblioteca.model.negocio
+br.unip.alpoo.biblioteca.model.persistencia
+br.unip.alpoo.biblioteca.util

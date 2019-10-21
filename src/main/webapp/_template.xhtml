@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>LM - Sistema Gerenciador de Biblioteca </title>
+	<h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body>
+	<div id="cabecalho">
+		<h:graphicImage library="imagens" name="logo-easy.png" id="logoCompany"/>
+	</div>
+		<div id="header1">
+			<p:megaMenu orientation="#{megaMenuView.orientation}"  
+					style="margin-top:0px" >
+					<p:menuitem value="Home" outcome="index"  />
+					<p:submenu label="Cadastro"   rendered="#{loginBean.autenticado}" >
+						<p:column>
+							<p:submenu label="Cadastro">
+								<p:menuitem value="Categoria" outcome="categoria?faces-redirect=true"  />
+								<p:menuitem value="Auttor"  outcome="autor?faces-redirect=true"  />
+								<p:menuitem value="Editora"  outcome="editora?faces-redirect=true"  />
+								<p:menuitem value="Livro"  outcome="livro?faces-redirect=true"  />
+			
+								</p:submenu>
+						</p:column>
+					</p:submenu>
+					<p:submenu label="Emprestimo"   rendered="#{loginBean.autenticado}">
+						<p:column>
+							<p:submenu label="Empréstimo">
+								<p:menuitem value="Empréstimo de Livro" outcome="emprestimo?faces-redirect=true" />
+								<p:menuitem value="Devolução de Livro" outcome="devolucao?faces-redirect=true" />
+								<p:menuitem value="Renovação de Livro" outcome="renovacao?faces-redirect=true" />
+								
+							</p:submenu>
+						</p:column>
+					</p:submenu>
+					<p:submenu label="Controle de acesso" rendered="#{loginBean.autenticado}"  >
+						<p:column>
+							<p:submenu label="Permissão">
+								<p:menuitem value="Cadastrar Funncionário"  outcome="funcionario?faces-redirect=true"  />
+								<p:menuitem value="Cadastrar Aluno"  outcome="aluno?faces-redirect=true"  />
+							</p:submenu>
+						</p:column>
+					</p:submenu>
+				
+				
+					<p:menuitem value="Efetuar Login" outcome="login?faces-redirect=true" rendered="#{!loginBean.autenticado}"  />
+
+					</p:megaMenu>
+		</div>
+		
+		<div id="usuarioLogado">
+			 <h:form rendered="#{loginBean.autenticado}">
+			 	Logado como: #{loginBean.usuario.login} 
+				 <h:commandButton value="[Sair]" action="#{loginBean.efetuarLogout()}" />
+			</h:form> 
+		</div>
+		
+	<div id="conteudo">
+		
+		<br/>
+		
+		<h:form >
+			<h:messages style = "color:red; font-size:14px; "  globalOnly="true" showDetail="true" />
+		</h:form>
+		
+		<br/>
+	
+		<ui:insert name="corpo" />
+		
+	</div>
+	
+	<div id="rodape">
+		Copyright 2016.Todos os Direitos reservados a LM
+	</div>
+</h:body>
+</html>
