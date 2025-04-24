@@ -64,7 +64,7 @@
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
-			<version>3.0</version>
+			<version>3.2.2</version>
 		</dependency>
 		
 	<!-- biblioteca (javaserver pages standard tag library) que será utilizada 
